@@ -743,6 +743,11 @@ header .header-inner-incon a span {
   font-weight: 700;
 }
 
+.gop-lai {
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
 @media only screen and (max-width: 1240px) {
   header .header-inner-menu ul {
     -moz-column-gap: 15px;
