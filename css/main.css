@@ -121,8 +121,8 @@ header .header-inner-logo {
   min-width: 165px;
 }
 header .header-inner-menu ul {
-  -moz-column-gap: 40px;
-       column-gap: 40px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
   color: #323232;
   font-size: 20px;
 }
@@ -168,8 +168,8 @@ header .header-inner-form button {
 header .header-inner-incon {
   display: flex;
   align-items: center;
-  -moz-column-gap: 61px;
-       column-gap: 61px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 header .header-inner-incon a {
   position: relative;
@@ -210,7 +210,7 @@ header .header-inner-incon a span {
   opacity: 0.5;
 }
 .trading-flex-left-now {
-  display: block;
+  display: flex;
 }
 .trading-flex-left-now a {
   padding: 23px 64px;
@@ -266,6 +266,8 @@ header .header-inner-incon a span {
   margin-bottom: 26px;
 }
 .colection-for-girl {
+  position: relative;
+  overflow: hidden;
   width: 50%;
   max-width: 648px;
   border-radius: 20px;
@@ -295,6 +297,27 @@ header .header-inner-incon a span {
   font-weight: 700;
   border-radius: 40px;
   background: #fff;
+}
+.colection-for-girl::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -80%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
+  width: 50%;
+  height: 100%;
+}
+.colection-for-girl:hover::before {
+  left: 0%;
+  animation: shine 1s;
+}
+@keyframes shine {
+  from {
+    left: -80%;
+  }
+  to {
+    left: 100%;
+  }
 }
 .colection-for-girl.men {
   background: #FBD103;
@@ -403,13 +426,22 @@ header .header-inner-incon a span {
 .new-slider .item-conten-img {
   position: relative;
   border-radius: 20px;
+  overflow: hidden;
 }
 .new-slider .item-conten-img a {
   position: relative;
   border-radius: 20px;
+  transition: all 500ms ease;
+  overflow: hidden;
 }
 .new-slider .item-conten-img a img {
   border-radius: 20px;
+  overflow: hidden;
+  transition: all 500ms ease;
+}
+.new-slider .item-conten-img a:hover img {
+  transform: scale(1.15);
+  opacity: 0.8;
 }
 .new-slider .item-conten-img .icon-item {
   position: absolute;
@@ -526,6 +558,8 @@ header .header-inner-incon a span {
   flex-direction: column;
   background: #004743;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .brands-item h3 {
   font-size: 50px;
@@ -713,6 +747,8 @@ header .header-inner-incon a span {
 .footer-end-bottom {
   width: 100%;
   margin-top: 30px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 .footer-end-bottom .bottom-logo {
   width: 27%;
@@ -744,18 +780,18 @@ header .header-inner-incon a span {
 }
 
 .gop-lai {
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 
 @media only screen and (max-width: 1240px) {
   header .header-inner-menu ul {
-    -moz-column-gap: 15px;
-         column-gap: 15px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
   }
   header .header-inner-incon {
-    -moz-column-gap: 15px;
-         column-gap: 15px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
   }
   header .header-inner-menu ul li {
     padding: 0;
@@ -782,6 +818,9 @@ header .header-inner-incon a span {
   }
   .new-slider .swiper-button-prev {
     left: 10%;
+  }
+  header .header-inner-form input {
+    width: 200px;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -824,6 +863,7 @@ header .header-inner-incon a span {
     box-shadow: 0 0 30px;
     border-radius: 10px;
     padding: 10px;
+    padding-top: 20px;
     opacity: 0;
     visibility: hidden;
     transform: translateX(100%);
@@ -923,17 +963,34 @@ header .header-inner-incon a span {
   .colection-sale .sale-left .sale-img h5 {
     font-size: 40px;
   }
+  .trading-flex-right img:nth-child(2) {
+    margin-left: -40px;
+    width: 50%;
+  }
+  .trading-flex-right img:nth-child(3) {
+    width: 40%;
+    margin-left: 20px;
+  }
+  .trading-flex-right img:nth-child(4) {
+    margin-left: -40px;
+    width: 50%;
+  }
 }
 @media only screen and (max-width: 479px) {
   .trading-flex-right {
-    flex-direction: column;
     row-gap: 20px;
   }
   .trading-flex-right img:nth-child(2) {
-    margin: 0;
+    margin-left: -40px;
+    width: 50%;
+  }
+  .trading-flex-right img:nth-child(3) {
+    width: 40%;
+    margin-left: 40px;
   }
   .trading-flex-right img:nth-child(4) {
-    margin: 0;
+    margin-left: -20px;
+    width: 50%;
   }
   .colection-for-girl .girl-text {
     padding-left: 10px;

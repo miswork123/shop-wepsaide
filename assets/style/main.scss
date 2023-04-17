@@ -123,7 +123,7 @@ header{
             min-width: 165px;
         }
         &-menu ul{
-            column-gap: 40px;
+            column-gap: 30px;
             color: #323232;
             font-size: 20px;
             & li{
@@ -167,7 +167,8 @@ header{
         &-incon{
             display: flex;
             align-items: center;
-            column-gap: 61px;
+            column-gap: 30px;
+
             & a{
                 position: relative;
                
@@ -208,7 +209,7 @@ header{
                 opacity: 0.5;
             }
             &-now{
-                display: block;
+                display: flex;
                 & a{
                     padding: 23px 64px;
                     color: #F9F9F9;
@@ -266,6 +267,8 @@ header{
     &-for{
         margin-bottom: 26px;
         &-girl{
+            position: relative;
+            overflow: hidden;
             width: 50%;
             max-width: 648px;
             border-radius: 20px;
@@ -298,6 +301,32 @@ header{
                 }
             }
         }
+        &-girl::before{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: -80%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
+            width: 50%;
+            height: 100%;
+            
+        }
+
+        &-girl:hover::before{
+            left: 0%;
+            animation: shine 1s;
+        }
+
+        @keyframes shine {
+            from{
+                left: -80%;
+            }
+            to{
+                left: 100%;
+            }
+        }
+
+        
 
         &-girl.men{
             background: #FBD103;
@@ -410,13 +439,23 @@ header{
             &-img{
                 position: relative;
                 border-radius: 20px;
+                overflow: hidden;
                 & a {
                     position: relative;
                     border-radius: 20px;
+                    transition: all 500ms ease;
+                    overflow: hidden;
                     & img{
                         border-radius: 20px;
+                        overflow: hidden;   
+                        transition: all 500ms ease;               
+                        }                   
                     }
-                }
+                    & a:hover img{
+                        transform: scale(1.15);
+                        opacity: 0.8;
+                    }   
+                
                 & .icon-item{
                     position: absolute;
                     right: 10px;
@@ -539,6 +578,8 @@ header{
         flex-direction: column;
         background: #004743;
         margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 10px;
         & h3{
             font-size: 50px;
             color: #fff;
@@ -720,6 +761,7 @@ header{
         &-bottom{
             width: 100%;
             margin-top: 30px;
+            column-gap: 20px;
             & .bottom-logo{
                 width: 27%;
                 & a{
@@ -754,17 +796,17 @@ header{
 }
 
 .gop-lai{
-    column-gap: 20px;
+    column-gap: 30px;
 }
 
 // reponsive
 
 @media only screen and (max-width: 1240px){
     header .header-inner-menu ul{
-        column-gap: 15px;
+        column-gap: 30px;
     }
     header .header-inner-incon{
-        column-gap: 15px;
+        column-gap: 30px;
     }
     header .header-inner-menu ul li{
         padding: 0;
@@ -791,6 +833,10 @@ header{
     }
     .new-slider .swiper-button-prev{
         left: 10%;
+    }
+
+    header .header-inner-form input{
+        width: 200px;
     }
 }
 
@@ -841,6 +887,7 @@ header{
         box-shadow: 0 0 30px;
         border-radius: 10px;
         padding: 10px;
+        padding-top: 20px;
         opacity: 0;
         visibility: hidden;
         transform: translateX(100%);
@@ -957,18 +1004,44 @@ header{
     .colection-sale .sale-left .sale-img h5{
         font-size: 40px;
     }
+    .trading-flex-right img:nth-child(2){
+        // margin-right: 0px;
+        margin-left: -40px;
+        
+        width: 50%;
+    }
+    .trading-flex-right img:nth-child(3){
+        // margin-left: -100px;
+        width: 40%;
+        margin-left: 20px;
+
+    }
+    .trading-flex-right img:nth-child(4){
+        margin-left: -40px;
+        width: 50%;
+    }
+   
 }
 
 @media only screen and (max-width: 479px){
     .trading-flex-right{
-        flex-direction: column;
         row-gap: 20px;
     }
     .trading-flex-right img:nth-child(2){
-        margin: 0;
+        // margin-right: 0px;
+        margin-left: -40px;
+        
+        width: 50%;
+    }
+    .trading-flex-right img:nth-child(3){
+        // margin-left: -100px;
+        width: 40%;
+        margin-left: 40px;
+
     }
     .trading-flex-right img:nth-child(4){
-        margin: 0;
+        margin-left: -20px;
+        width: 50%;
     }
     .colection-for-girl .girl-text{
         padding-left: 10px;
